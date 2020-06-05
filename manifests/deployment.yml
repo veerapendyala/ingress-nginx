@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "alluxioaks"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "alluxioaks"
+    spec:
+      containers:
+        - name: "alluxioaks"
+          image: "ingressnginx.azurecr.io/alluxioaks"
+          ports:
+          - containerPort: 80
